@@ -17,7 +17,7 @@ require.config({
   shim: {
     backbone: {
       deps: ["lodash", "jquery"],
-      attach: "Backbone"
+      exports: "Backbone"
     },
 
     // Add the Backbone LocalStorage plugin in

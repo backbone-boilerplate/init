@@ -1,5 +1,5 @@
 require([
-  "namespace",
+  "app",
 
   // Libs
   "jquery",
@@ -9,7 +9,7 @@ require([
   "modules/todo"
 ],
 
-function(namespace, $, Backbone, Todo) {
+function(app, $, Backbone, Todo) {
 
   // An example Backbone application contributed by
   // [Jérôme Gravel-Niquet](http://jgn.me/). This demo uses a simple
@@ -60,9 +60,6 @@ function(namespace, $, Backbone, Todo) {
       list.fetch();
     }
   });
-
-  // Shorthand the application namespace
-  var app = namespace.app;
 
   // Treat the jQuery ready function as the entry point to the application.
   // Inside this function, kick-off all initialization, everything up to this

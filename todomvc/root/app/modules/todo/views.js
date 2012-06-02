@@ -1,11 +1,11 @@
 define([
-  "namespace",
+  "app",
 
   // Libs
   "backbone"
 ],
 
-function(namespace, Backbone) {
+function(app, Backbone) {
   
   var Views = {};
 

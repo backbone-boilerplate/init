@@ -28,7 +28,7 @@ function($, _, Backbone) {
         });
       } 
       
-      return done(JST[path]);
+      return JST[path];
     }
   });
 

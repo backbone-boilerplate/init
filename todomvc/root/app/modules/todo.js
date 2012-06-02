@@ -1,5 +1,5 @@
 define([
-  "namespace",
+  "app",
 
   // Libs
   "backbone",
@@ -11,10 +11,10 @@ define([
   "plugins/backbone-localstorage"
 ],
 
-function(namespace, Backbone, Views) {
+function(app, Backbone, Views) {
 
   // Create a new module
-  var Todo = namespace.module();
+  var Todo = app.module();
 
   // Todo Model
   // ----------
