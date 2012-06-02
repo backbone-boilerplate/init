@@ -12,7 +12,7 @@ define([
 function(app, Backbone) {
 
   // Create a new module
-  var Example = namespace.module();
+  var Example = app.module();
 
   // This will fetch the tutorial template and render it.
   Example.Views.Tutorial = Backbone.View.extend({
