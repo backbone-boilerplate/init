@@ -10,31 +10,24 @@ require.config({
 
     // Libraries
     jquery: "../assets/js/libs/jquery",
-    underscore: "../assets/js/libs/underscore",
-    backbone: "../assets/js/libs/backbone",
-
-    // Shim Plugin
-    use: "../assets/js/plugins/use"
+    lodash: "../assets/js/libs/lodash",
+    backbone: "../assets/js/libs/backbone"
   },
 
-  use: {
+  shim: {
     backbone: {
-      deps: ["use!underscore", "jquery"],
+      deps: ["lodash", "jquery"],
       attach: "Backbone"
-    },
-
-    underscore: {
-      attach: "_"
     },
 
     // Add the Backbone LocalStorage plugin in
     "plugins/backbone-localstorage": {
-      deps: ["use!backbone"]
+      deps: ["backbone"]
     },
 
     // Add the Backbone LocalStorage plugin in
     "plugins/backbone.layoutmanager": {
-      deps: ["use!backbone"]
+      deps: ["backbone"]
     }
   }
 });

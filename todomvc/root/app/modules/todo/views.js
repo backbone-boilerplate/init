@@ -2,7 +2,7 @@ define([
   "namespace",
 
   // Libs
-  "use!backbone"
+  "backbone"
 ],
 
 function(namespace, Backbone) {
@@ -81,15 +81,13 @@ function(namespace, Backbone) {
     tagName: "ul",
 
     render: function(manage) {
-      var view = manage(this);
-
       this.collection.each(function(item) {
-        view.insert(new Views.Item({
+        this.insertView(new Views.Item({
           model: item
         }));
-      });
+      }, this);
 
-      return view.render();
+      return manage(this).render();
     },
 
     initialize: function() {
@@ -98,9 +96,9 @@ function(namespace, Backbone) {
       }, this);
 
       this.collection.on("add", function(item) {
-        this.view(new Views.Item({
+        this.insertView(new Views.Item({
           model: item
-        }), true).render();
+        })).render();
       }, this);
     }
   });

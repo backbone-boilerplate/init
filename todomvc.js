@@ -4,18 +4,6 @@ exports.notes = "Generates the TodoMVC application using " +
 
 exports.template = function(grunt, init, done) {
 
-  // Grunt utilities.
-  var task = grunt.task;
-  var file = grunt.file;
-  var utils = grunt.utils;
-  var log = grunt.log;
-  var verbose = grunt.verbose;
-  var fail = grunt.fail;
-  var option = grunt.option;
-  var config = grunt.config;
-  var template = grunt.template;
-  var _ = grunt.utils._;
-
   // Files to copy (and process).
   var files = init.filesToCopy({});
 

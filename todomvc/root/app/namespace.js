@@ -1,40 +1,34 @@
 define([
   // Libs
   "jquery",
-  "use!underscore",
-  "use!backbone",
+  "lodash",
+  "backbone",
 
   // Plugins
-  "use!plugins/backbone.layoutmanager"
+  "plugins/backbone.layoutmanager"
 ],
 
 function($, _, Backbone) {
-  // Put application wide code here
+  // Create or attach to the global JavaScript Template cache.
+  var JST = window.JST = window.JST || {}; 
+
+  // Configure LayoutManager
   Backbone.LayoutManager.configure({
     paths: {
       layout: "app/templates/layouts/",
       template: "app/templates/"
     },
 
-    render: function(template, context) {
-      return template(context);
-    },
-
     fetch: function(path) {
       path = path + ".html";
 
-      var done = this.async();
-      var JST = window.JST = window.JST || {}; 
-
-      if (JST[path]) {
-        return done(JST[path]);
+      if (!JST[path]) {
+        $.ajax({ url: path, async: false }).then(function(contents) {
+          JST[path] = _.template(contents);
+        });
       } 
       
-      $.get(path, function(contents) {
-        var tmpl = _.template(contents);
-
-        done(JST[path] = tmpl);
-      }, "text");
+      return done(JST[path]);
     }
   });
 

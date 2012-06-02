@@ -2,19 +2,10 @@ exports.description = "Backbone Boilerplate framework";
 exports.notes = "This tool will help you install, configure, build, and "
   + "maintain your Backbone Boilerplate project.";
 
-exports.template = function(grunt, init, done) {
+// Any existing file or directory matching this wildcard will cause a warning.
+exports.warnOn = "*";
 
-  // Grunt utilities.
-  var task = grunt.task;
-  var file = grunt.file;
-  var utils = grunt.utils;
-  var log = grunt.log;
-  var verbose = grunt.verbose;
-  var fail = grunt.fail;
-  var option = grunt.option;
-  var config = grunt.config;
-  var template = grunt.template;
-  var _ = grunt.utils._;
+exports.template = function(grunt, init, done) {
 
   // Files to copy (and process).
   var files = init.filesToCopy({});

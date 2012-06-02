@@ -2,13 +2,13 @@ define([
   "namespace",
 
   // Libs
-  "use!backbone",
+  "backbone",
 
   // Views
   "modules/todo/views",
 
   // Plugins
-  "use!plugins/backbone-localstorage"
+  "plugins/backbone-localstorage"
 ],
 
 function(namespace, Backbone, Views) {
@@ -85,7 +85,6 @@ function(namespace, Backbone, Views) {
       return todo.get("order");
     }
   });
-
 
   // Todo Views
   // ----------
