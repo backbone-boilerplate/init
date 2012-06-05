@@ -48,8 +48,6 @@ function(app, $, Backbone, Todo) {
         }
       });
 
-      window.main = main;
-
       // Attach to the DOM
       main.$el.appendTo("#main");
 
