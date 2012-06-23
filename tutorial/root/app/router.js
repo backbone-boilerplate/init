@@ -15,13 +15,16 @@ function(app, Example) {
     },
 
     index: function() {
-      var tutorial = new Example.Views.Tutorial();
+      // Create a layout and associate it with the #main div.
+      var layout = new Backbone.Layout({
+        el: "#main"
+      });
 
-      // Attach the tutorial to the DOM
-      tutorial.$el.appendTo("#main");
-
-      // Render the tutorial.
-      tutorial.render();
+      // Insert the tutorial into the layout.
+      layout.insertView(new Example.Views.Tutorial());
+      
+      // Render the layout into the DOM.
+      layout.render();
     }
   });
 
