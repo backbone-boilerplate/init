@@ -20,14 +20,10 @@ require.config({
       exports: "Backbone"
     },
 
-    // Add the Backbone LocalStorage plugin in
-    "plugins/backbone-localstorage": {
-      deps: ["backbone"]
-    },
+    // Backbone.layoutmanager depends on Backbone.
+    "plugins/backbone.layoutmanager": ["backbone"],
 
-    // Add the Backbone LocalStorage plugin in
-    "plugins/backbone.layoutmanager": {
-      deps: ["backbone"]
-    }
+    // Backbone.localstorage depends on Backbone.
+    "plugins/backbone-localstorage": ["backbone"]
   }
 });
