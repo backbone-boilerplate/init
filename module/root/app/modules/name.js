@@ -15,7 +15,7 @@ function(app) {
   });
 
   // Default collection.
-  {%= module_name %}.Collection = Backbone.Model.extend({
+  {%= module_name %}.Collection = Backbone.Collection.extend({
     model: {%= module_name %}.Model
   });
 
