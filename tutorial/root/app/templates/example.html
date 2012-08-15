@@ -29,7 +29,6 @@
           <li><a data-bypass href="#default-routes">Removing the default routes</a>
           <li><a data-bypass href="#default-assets">Removing default assets</a>
         </ul>
-        <li><a data-bypass href="#namespace">Namespace</a>
         <li><a data-bypass href="#modules">Creating a module</a>
         <li><a data-bypass href="#templates">Working with templates</a>
         <li><a data-bypass href="#events">Working with Application Wide Events</a>
@@ -127,7 +126,7 @@
       Both of these files are safe to remove.</p>
 
     <li><h4 id="default-routes">Removing the default routes</h4>
-      <p>Routes are defined in the <code>app/main.js</code> file.  Familiarize yourself with it's contents.  You'll notice the default router has two existing routes and callback defined, reset it to:
+      <p>Routes are defined in the <code>app/router.js</code> file.  Familiarize yourself with it's contents.  You'll notice the default router has two existing routes and callback defined, reset it to:
 
       <pre><code>
     // Defining the application router, you can attach sub routers here.
@@ -143,36 +142,14 @@
       </code></pre>
       </p>
 
-
-      <p>Above the Router definition you'll see a reference to the example module,
-      this is safe to delete as well.
-
-      <pre><code>
-    // Include the example module
-    var Example = namespace.module("example");
-      </code></pre>
-      </p>
   
     <li><h4 id="default-assets">Removing default assets</h4>
-      <p>The default styles for this tutorial are stored in <code>assets/css/style.css</code>.  You will probably want to remove these since they only make sense for this specific page.  They start on <code>Line 209</code>.  With the following H5BP header:
-
-      <pre><code>
-    /* ==|== primary styles =====================================================
-       Author: Backbone Boilerplate <Change to your Name>
-       ========================================================================== */
-     </code></pre>
-     </p>
+      <p>The default styles for this tutorial are stored in <code>assets/css/style.css</code>.  You will probably want to remove these since they only make sense for this specific page.</p>
 
      <p>You may also want to change the name to yours, if you're planning on putting your custom CSS here as well.</p>
 
      <p>You should delete the <code>assets/img/backbone.png</code> file if you are not planning on using it in your app.</p>
   </ul>
-
-  <h3 id="namespace">Namespace</h3>
-  <p>The <code>namespace.js</code> file is very important since it contains logic that should
-  exist for every module in your application.  This also contains the <code>module</code>
-  shortcut function and <code>fetchTemplate</code> function.</p>
-  </p>
 
   <h3 id="modules">Creating a module</h3>
   <p>Following the Bocoup post on <a data-bypass target="_blank" href="http://weblog.bocoup.com/organizing-your-backbone-js-application-with-modules">Organizing Your Backbone.js Application With Modules</a> this boilerplate provides the same module definition structure.
