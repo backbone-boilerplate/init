@@ -24,7 +24,7 @@ function(app, Todo) {
       var list = new Todo.List();
 
       // Use the main layout.
-      app.useLayout("main").setViews({
+      app.useLayout({ template: 'layouts/main' }).setViews({
         // Attach the root content View to the layout.
         "form": new Todo.Views.Form({
           collection: list
