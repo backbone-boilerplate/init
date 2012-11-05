@@ -187,7 +187,7 @@ function(app, Backbone) {
     // collection, when items are added or changed. Kick things off by
     // loading any preexisting todos that might be saved in *localStorage*.
     initialize: function() {
-      this.collection.on("change", function() {
+      this.collection.on("all", function() {
         this.render();
       }, this);
     },
